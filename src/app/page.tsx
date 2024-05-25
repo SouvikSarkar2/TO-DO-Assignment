@@ -230,7 +230,7 @@ const handleDelete = (id:string) => {
               <TableCell>
                 <Badge variant={task.status === "pending" ? "destructive":"outline"} className={task.status==="completed" ? "bg-green-500 text-white":""} >{task.status}</Badge>
               </TableCell>
-              <TableCell>{new Date(task.dueDate).toISOString()}</TableCell>
+              <TableCell>{new Date(task.dueDate).toLocaleDateString()}</TableCell>
               <TableCell>
                 <div className="flex items-center gap-2"><EditForm setTasks={setTasks} task={task} />
                   
