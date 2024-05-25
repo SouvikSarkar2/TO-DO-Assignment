@@ -18,7 +18,7 @@ const ViewTask = ({id}:{id:string}) => {
 
   useEffect(() => {
     noStore();
-    fetch(`http://localhost:3001/tasks/${id}?refresh=true`,{ cache: 'no-store' })
+    fetch(`http://localhost:8000/tasks/${id}?refresh=true`,{ cache: 'no-store' })
         .then(response => {
             if (!response.ok) {
                 throw new Error('Failed to fetch tasks');

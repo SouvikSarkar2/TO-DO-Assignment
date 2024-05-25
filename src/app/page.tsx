@@ -46,7 +46,7 @@ export default function Home() {
   
 
   useEffect(() => {
-    fetch('http://localhost:3001/tasks',{ cache: 'no-store' })
+    fetch('http://localhost:8000/tasks',{ cache: 'no-store' })
         .then(response => {
             if (!response.ok) {
                 throw new Error('Failed to fetch tasks');
@@ -77,7 +77,7 @@ const handleSubmit = () => {
   };
 
  
-  fetch('http://localhost:3001/tasks ', {
+  fetch('http://localhost:8000/tasks ', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'
@@ -110,7 +110,7 @@ const handleSubmit = () => {
 };
 
 const handleDelete = (id:string) => {
-  fetch(`http://localhost:3001/tasks/${id}`, {
+  fetch(`http://localhost:8000/tasks/${id}`, {
       method: 'DELETE',
   })
   .then(response => {

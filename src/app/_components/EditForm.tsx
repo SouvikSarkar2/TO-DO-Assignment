@@ -39,7 +39,7 @@ const EditForm:React.FC<EditFormProps> = ({task,setTasks}) => {
   const [date, setDate] = useState<Date>(task.dueDate);
   
   const handleEdit = (id:string, updatedTask:Task) => {
-    fetch(`http://localhost:3001/tasks/${id}`, {
+    fetch(`http://localhost:8000/tasks/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
